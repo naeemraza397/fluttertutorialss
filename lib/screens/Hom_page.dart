@@ -7,10 +7,19 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple.shade900,
         title: Text("myapp"),
         centerTitle: true,
       ),
-      body: Center(child: Container(child: Text("this is flutter"))),
+      body: Center(
+          child: Container(
+              child: Text(
+        "This is flutter",
+        style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            color: Colors.purple.shade900),
+      ))),
       drawer: Drawer(),
     );
   }
