@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/widgets/drawer.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -7,8 +8,9 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple.shade900,
-        title: Text("myapp"),
+        title: Text(
+          "Catalog App",
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -20,7 +22,7 @@ class Homepage extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: Colors.purple.shade900),
       ))),
-      drawer: Drawer(),
+      drawer: Mydrawer(),
     );
   }
 }
