@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/catalog.dart';
+import 'package:flutter_catalog/widgets/Item_widget.dart';
 import 'package:flutter_catalog/widgets/drawer.dart';
 
 class Homepage extends StatelessWidget {
@@ -6,23 +8,25 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dummyalist = List.generate(50, (index) => CatalogModel.items[0]);
     return Scaffold(
-      
       appBar: AppBar(
         title: Text(
           "Catalog App",
         ),
         centerTitle: true,
       ),
-      body: Center(
-          child: Container(
-              child: Text(
-        "This is flutter",
-        style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: Colors.purple.shade900),
-      ))),
+      body: Padding(
+        padding: const EdgeInsets.all(14.0),
+        child: ListView.builder(
+          itemCount: dummyalist.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyalist[index],
+            );
+          },
+        ),
+      ),
       drawer: Mydrawer(),
     );
   }
